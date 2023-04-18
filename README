@@ -1,0 +1,93 @@
+=> Assignment SMS Gateway
+
+    - This project is a simple SMS gateway system that can balance SMS messages across multiple SMS providers.
+
+
+=>Technologies Used
+
+- Node.js
+- Express
+- MongoDB
+- Mongoose
+- Postman
+
+
+=> Getting Started
+
+- Open a terminal and navigate to the project folder.
+- Run npm install to install the dependencies.
+- Run npm start to start the server.
+- Open Postman and test the endpoints.
+
+
+=> Endpoints
+
+- POST /sendSms
+    This API is used to send SMS messages. It accepts the following parameters:
+
+    phoneNumber: The phone number of the recipient.
+    text: The text message to be sent.  
+    POST /simulateSmsProviderThroughput
+    This API is used to simulate sending SMS messages. It accepts the following parameters:
+
+    provider: The name of the SMS provider to simulate.
+    throughput: The number of SMS messages to send per minute.
+
+
+- POST /simulateSmsProviderFailure
+    This API is used to simulate the failure of an SMS provider. It accepts the following parameters:
+
+    provider: The name of the SMS provider to fail.
+    loadBalancing: An object containing the percentage load balancing of each SMS provider.
+
+- POST /storeAndForwardSms
+    This API is used to store SMS messages to be sent later if all SMS providers are down. It accepts an array or list of objects containing phone numbers and texts to be sent as SMS.
+
+=>License
+    - This project is licensed under the MIT License.
+
+
+=> Postman Export json link 
+        https://api.postman.com/collections/25415618-776994f1-8108-45fb-a10e-e1f4bfeb9755?access_key=PMAT-01GY9TAFK9J6YX8APXH1CM4B06 
+
+
+=> Summary of this project
+
+    Based on the information provided, the assumptions made are:
+
+    The system is designed to send SMS messages in India.
+    The system uses three SMS providers - Airtel, JIO, and VI - for load balancing.
+    The load balancing is equally distributed among the three SMS providers.
+    The system is capable of simulating SMS provider failures and adjusting load balancing accordingly.
+    The system is capable of storing SMS messages to be sent later if all SMS providers are down.
+    The system is designed to handle large volumes of SMS messages and can adjust the throughput of SMS messages based on the load on the SMS providers.
+
+    The technologies used in the implementation of this system include:
+
+    Node.js - a server-side JavaScript runtime environment.
+    Express.js - a popular Node.js web framework for building APIs.
+    MongoDB - a NoSQL document database used for storing SMS messages.
+    Mongoose - a MongoDB object modeling tool used for defining and interacting with the SMS message schema.
+    Postman - a popular tool used for testing APIs.
+    Git - a version control system used for managing code changes.
+    Heroku - a cloud platform used for deploying and hosting the application.
+
+
+
+=> Information About API's
+
+    Based on the high-level specification provided, the following APIs could be implemented:
+
+    POST /sendSms - This API would accept an array or list of objects containing phone numbers and texts to be sent as SMS. The API would internally load balance the SMS sending based on the throughput of the SMS providers and return a response with the status of each SMS sent and the SMS provider used to send the message.
+
+    GET /smsStatistics?provider=<provider_name> - This API would accept the name of the SMS provider as a query parameter and return the total number of SMS messages sent and the current throughput of that SMS provider.
+
+    GET /systemStatus - This API would return the current status of the system, including the number of SMS messages sent by each SMS provider and the current system throughput.
+
+    POST /simulateSmsProviderThroughput - This API would allow the simulator to simulate the throughput of each SMS provider. It would accept a payload containing the name of the SMS provider and the number of SMS messages to be sent per minute.
+
+    POST /simulateSmsProviderFailure - This API would allow the simulator to simulate the failure of an SMS provider. It would accept the name of the SMS provider to be failed, and the API would adjust the load balancing of SMS messages accordingly.
+
+    POST /storeAndForwardSms - This API would allow the system to store SMS messages to be sent later if all SMS providers are down. It would accept an array or list of objects containing phone numbers and texts to be sent as SMS and store them in a database. A separate API could be implemented to process and send these stored SMS messages once the SMS providers are back up.
+
+    These APIs could be implemented using an appropriate framework such as Express.js and could follow the best practices of RESTful API design, including proper error handling, input validation, and documentation.

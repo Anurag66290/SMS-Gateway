@@ -1,0 +1,35 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "app.js",
+  "private": true,
+  "bin": {
+    "www": "./bin/www.js"
+  },
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "es6": "^0.0.7",
+    "express": "^4.17.1",
+    "express-validator": "^7.0.1",
+    "fs": "^0.0.1-security",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^9.0.0",
+    "logger": "^0.0.1",
+    "mongoose": "^7.0.3",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.22",
+    "Validator": "^1.1.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4"
+  }
+}
